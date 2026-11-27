@@ -149,15 +149,17 @@
   details .answer { padding: 0 0 16px; }
   details .answer p:last-child, details .answer ul:last-child { margin-bottom: 0; }
 
-  .release { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+  /* 更新情報：バージョンと日付を見出し、その下に説明。版ごとに区切り線で段落を分ける */
+  .release { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; padding: 18px 0; border-top: 1px solid var(--separator); }
+  #updates h2 + .release { border-top: none; padding-top: 4px; }
   .release .ver {
     flex: none;
-    font-weight: 600;
-    background: var(--surface);
-    border-radius: 999px;
-    padding: 2px 12px;
+    font-weight: 700;
     font-size: 15px;
+    color: var(--text);
   }
+  .release .ver .date { font-weight: 400; color: var(--text-secondary); margin-left: 8px; }
+  .release ul.plain, .release p { margin: 0; color: var(--text-secondary); }
 
   .contact { text-align: center; padding-bottom: 8px; }
   .mail-button {
@@ -367,7 +369,7 @@
   <section id="updates">
     <h2>更新情報</h2>
     <div class="release">
-      <span class="ver">1.0.4（2026年11月27日）</span>
+      <span class="ver">v1.0.4<span class="date">2026年11月27日</span></span>
       <ul class="plain">
         <li>アラームが鳴っている間にアプリを終了しても、約3秒でまたアラームが鳴るようにしました</li>
         <li>ホームの「次のアラーム」までの残り時間を、秒まで表示するようにしました</li>
@@ -377,7 +379,7 @@
       </ul>
     </div>
     <div class="release">
-      <span class="ver">1.0.3（2026年11月26日）</span>
+      <span class="ver">v1.0.3<span class="date">2026年11月26日</span></span>
       <ul class="plain">
         <li>鳴っている間、音量を5秒ごとに30%→65%→100%と少しずつ大きくするようにしました（もともと大きいときは下げません）</li>
         <li>スヌーズや一時停止のあとも、同じアラームなら止めたときの大きさから続けて鳴ります</li>
@@ -389,7 +391,7 @@
       </ul>
     </div>
     <div class="release">
-      <span class="ver">1.0.2（2026年11月24日）</span>
+      <span class="ver">v1.0.2<span class="date">2026年11月24日</span></span>
       <ul class="plain">
         <li>アラーム中に音量を下げても、元の音量に戻るようにしました</li>
         <li>小さすぎる音量で鳴り始めたときは、30%まで上げて鳴らします</li>
@@ -400,14 +402,14 @@
       </ul>
     </div>
     <div class="release">
-      <span class="ver">1.0.1</span>
+      <span class="ver">v1.0.1</span>
       <ul class="plain">
         <li>設定画面の「3秒後にテスト」を削除しました</li>
         <li>動きを確かめたいときは、数分先の時刻でアラームを追加してお試しください</li>
       </ul>
     </div>
     <div class="release">
-      <span class="ver">1.0.0</span>
+      <span class="ver">v1.0.0</span>
       <p>最初のバージョンを公開しました。</p>
     </div>
   </section>
